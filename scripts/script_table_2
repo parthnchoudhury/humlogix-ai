@@ -1,0 +1,43 @@
+data1<- read.csv("C:/Users/edlsx/Desktop/retour entretien - sondés.csv")
+data<-data1[,2:6]
+
+data[,1]<-as.factor(data[,1])
+data[,5]<-as.factor(data[,5])
+data[,3]<-as.factor(data[,3])
+data[,4]<-as.factor(data[,4])
+
+data<-as.data.frame(data)
+summary(data)
+
+dh <- data[data$Sex == "M", ]
+df <- data[data$Sex == "F", ]
+
+data<-data[,2:5]
+dh<-dh[,2:5]
+df<-df[,2:5]
+
+s<-as.data.frame(summary(data))
+sf<-as.data.frame(summary(df))
+sh<-as.data.frame(summary(dh))
+sfi<-cbind(s,sf,sh)
+sfinal<-sfi[,c(2,3,6,9)]
+sfinal<-sfinal[1:19,]
+sfinal<-sfinal[-c(11,12,16,17,18),]
+
+
+year_birth<-c("1997(1993-1998)","1998(1996-1999)","1985(1989-1996)")
+medical_student<-c("4(58)","3(75)","1(33)")
+midwife<-c("1(14)","0(0)","1(33)")
+nurse<-c("1(14)","1(25)","0(0)")
+logi<-c("1(14)","0(0)","1(33)")
+lille<-c("5(72)","4(100)","1(33)")
+arras<-c("1(14)","0(0)","1(33)")
+tourcoing<-c("1(14)","0(0)","1(33)")
+ukrainian<-c("0(0)","0(0)","0(0)")
+prof<-c("","","")
+town<-c("","","")
+
+tablefinal<-as.data.frame(rbind(year_birth,prof,medical_student,nurse,midwife,logi,town,lille,arras,tourcoing,ukrainian))
+rownames(tablefinal)<-c("Median year of birth (range)-yr","Profession-no.(%)","Medical student","Nurse","Midwife","Logistician","Living town-no.(%)","Lille","Arras","Tourcoing","Ukrainian naionality-no.(%)")
+colnames(tablefinal)<-c("All (n=7)","Women (n=4)","Men (n=3)")
+gridExtra::grid.table(tablefinal)
