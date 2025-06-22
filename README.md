@@ -79,7 +79,7 @@ Contributions are welcome! Please open an issue or submit a pull request if you�
 
 ## 📄 License
 
-This project is licensed under the MIT License — see LICENSE for details.
+This project is licensed under the Apache-2.0 license — see LICENSE for details.
 
 # About me 🤓
 - I am a People Centric Technology and Servant Leader with 14+ years of industry experience, with a passion for Data Science, Data Governance, IT, Cloud and Product Management. I have a keen interest and expertise in solving business problems using unique logic and analytics. I bring solutions to the table based on competitive Business Acumen and Human Intelligence.
